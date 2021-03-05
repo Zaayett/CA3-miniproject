@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="container">
+    <header class="header">
+        <div class="logo">
+
+        </div>
+        <div class="nav">
+            <ul>
+                <li>
+                    <a href="/signup"><button class="button is-primary">Register</button></a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="hero-image">
+            <img src="/public/img/family4.svg"  alt="">
+        </div>
+        <div class="hero-text">
+            
+            <h1 class=heading>
+                Register as a citizen today.
+            </h1>
+            <p>
+                {% for citizen in citizens%}
+
+                {{Object.keys(citizens).map(function(key, index) {
+                    citizens[key] *= 2;
+                  })}}
+
+                  {% endfor %},
+            </p>
+        </div>
+        
+    </section>
+</div>
+
+
+{% endblock %}
